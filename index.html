@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="icon" type="image/png" href="/imagenes/logo.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Aprende piano desde cero con The Hollow Academy. Clases personalizadas online con instructores de élite. Técnica, teoría y práctica real desde el primer día." />
+  <meta name="theme-color" content="#0a0a1a" />
+  <title>The Hollow Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <script type="module" src="/main.js"></script>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section id="hero" class="section hero" data-color="#000000" data-theme="dark">
+      <img src="/imagenes/logo_hero_opt.png" alt="The Hollow Academy Logo" class="hero-logo">
+      <div class="piano-visuals">
+        <div class="key white" data-note="C4"></div>
+        <div class="key black" data-note="C#4"></div>
+        <div class="key white" data-note="D4"></div>
+        <div class="key black" data-note="D#4"></div>
+        <div class="key white" data-note="E4"></div>
+        <div class="key white" data-note="F4"></div>
+        <div class="key black" data-note="F#4"></div>
+        <div class="key white" data-note="G4"></div>
+        <div class="key black" data-note="G#4"></div>
+        <div class="key white" data-note="A4"></div>
+        <div class="key black" data-note="A#4"></div>
+        <div class="key white" data-note="B4"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1 id="headline" class="headline">Del Vacío<br><span class="highlight">al Destello de la
+            Música</span></h1>
+        <p id="subheadline" class="subheadline">Por solo <span id="hero-price-old"
+            style="text-decoration: line-through; opacity: 0.6; font-size: 0.8em; margin-right: 8px;">$150</span><span
+            id="hero-price-new" class="price">$80</span> al mes.</p>
+        <a href="#contact" id="cta-hero" class="btn-primary cta-btn" data-sound="chord"
+          style="display: inline-block; text-decoration: none;">¡Quiero ser Pianista!</a>
+      </div>
+      <div class="scroll-indicator">
+        <span>Deslizar</span>
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section benefits" data-color="#0a0a1a" data-theme="dark">
+      <div class="container">
+        <h2 class="benefit-title" data-i18n="benefitsTitle">¿Por qué este curso?</h2>
+
+        <!-- Intro Video Overlay -->
+        <div id="benefits-video-overlay" class="benefits-video-overlay">
+          <video id="pet-video" autoplay loop muted playsinline
+            style="width: 100%; border-radius: 12px; display: block; margin: 0 auto;">
+            <source src="/videos/pet_opt.webm" type="video/webm">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+
+        <div class="benefits-grid" id="benefits-grid">
+          <div class="benefit-card piano-hover" data-sound="E4">
+            <h3 data-i18n="benefit1Title">Práctica Real</h3>
+            <p data-i18n="benefit1Desc">Ejercicios diseñados para tocar desde el primer día.</p>
+            <button class="read-more-btn" data-modal="1">Leer más</button>
+          </div>
+          <div class="benefit-card piano-hover" data-sound="G4">
+            <h3 data-i18n="benefit2Title">Historia de la Música</h3>
+            <p data-i18n="benefit2Desc">Conoce las épocas, los grandes compositores y cómo moldearon el piano.</p>
+            <button class="read-more-btn" data-modal="2">Leer más</button>
+          </div>
+          <div class="benefit-card piano-hover" data-sound="B4">
+            <h3 data-i18n="benefit3Title">Lectura Musical</h3>
+            <p data-i18n="benefit3Desc">Aprende a leer partituras de forma fluida y natural.</p>
+            <button class="read-more-btn" data-modal="3">Leer más</button>
+          </div>
+          <div class="benefit-card piano-hover" data-sound="C5">
+            <h3 data-i18n="benefit4Title">Comunidad Global</h3>
+            <p data-i18n="benefit4Desc">Conéctate con otros estudiantes y comparte tu progreso.</p>
+            <button class="read-more-btn" data-modal="4">Leer más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefit Modal -->
+    <div id="benefit-modal" class="benefit-modal">
+      <div class="benefit-modal-content">
+        <button class="modal-close">&times;</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-body"></p>
+      </div>
+    </div>
+
+
+    <!-- Promo Banner -->
+    <section id="promo-banner" class="promo-banner" data-theme="dark">
+      <div id="promo-text-container" class="container promo-content">
+        <span class="promo-text">🔥 Antes <span style="text-decoration: line-through; opacity: 0.6;">$150 USD</span> —
+          Solo por estos días a <strong>$80 USD</strong> al mes</span>
+      </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="section methodology" data-color="#000000" data-theme="dark">
+      <div class="container">
+        <h2 class="section-title" data-i18n="methodologyTitle">Tu camino al éxito</h2>
+
+        <!-- Embedded Video -->
+        <div class="video-container">
+          <div id="player"></div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <h3 data-i18n="step1Title">Fundamentos</h3>
+            <p data-i18n="step1Desc">Postura, ritmos básicos y conocimiento del teclado.</p>
+            <button class="read-more-btn" data-modal="step1">Leer más</button>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <h3 data-i18n="step2Title">Acordes Mágicos</h3>
+            <p data-i18n="step2Desc">La clave para tocar cualquier canción pop/rock.</p>
+            <button class="read-more-btn" data-modal="step2">Leer más</button>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <h3 data-i18n="step3Title">Maestría</h3>
+            <p data-i18n="step3Desc">Técnicas avanzadas, arpegios y expresión emocional.</p>
+            <button class="read-more-btn" data-modal="step3">Leer más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="section instructors" data-color="#0a0a1a" data-theme="dark">
+      <div class="container">
+        <h2 class="section-title">Nuestros Instructores</h2>
+        <div class="instructors-grid">
+          <!-- Instructor 1 -->
+          <div class="instructor-card">
+            <div class="instructor-photo">
+              <img src="/instructores/instructor 1.jpeg" alt="Instructor 1" loading="lazy" decoding="async"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="instructor-name">Hollow Pianist</h3>
+            <p class="instructor-title" style="color: #d038ff; font-weight: bold;">FUNDADOR & VISIONARIO</p>
+            <p class="instructor-desc">
+              Pianista con 10 años de trayectoria en formación e interpretación musical.<br>
+              Experiencia en enseñanza del piano y acompañamiento artístico.<br>
+              Formación musical integral y estudio disciplinado continuo.<br>
+              Creador de contenido artístico "The Hollow Pianist" en redes sociales y cofundador.
+            </p>
+          </div>
+
+          <!-- Instructor 2 -->
+          <div class="instructor-card">
+            <div class="instructor-photo">
+              <img src="/instructores/instructor 2.jpeg" alt="Instructor 2" loading="lazy" decoding="async"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h3 class="instructor-name">Felipe Fernández</h3>
+            <p class="instructor-title" style="color: #d038ff; font-weight: bold;">INGENIERO DE SONIDO & PRODUCTOR</p>
+            <p class="instructor-desc">
+              Con más de <strong>13 años de trayectoria sólida</strong>, es la <strong>autoridad técnica y
+                artística</strong>.<br>
+              Ha formado el talento de <strong>+90 músicos</strong>, elevando sus estándares de producción, mastering
+              y
+              enseñanza musical.<br>
+              Su visión multidisciplinaria es el corazón de nuestra excelencia académica.
+            </p>
+          </div>
+
+          <!-- Instructor 3 -->
+          <div class="instructor-card">
+            <div class="instructor-photo">
+              <img src="/instructores/instructor 3.png" alt="Instructor 3" loading="lazy" decoding="async"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            <h3 class="instructor-name" style="font-size: 1.2rem;">Ángel Nicolás Calderón Gaitán</h3>
+            <p class="instructor-title" style="color: #d038ff; font-weight: bold;">PIANISTA & PEDAGOGO</p>
+            <p class="instructor-desc" style="font-size: 0.95rem;">
+              Pianista de la prestigiosa <strong>Juan N. Corpas</strong> y académico de élite.<br>
+              Especialista en <strong>Partimento</strong>: la técnica secreta de composición de los grandes
+              maestros.<br>
+              Formado por concertistas internacionales para garantizar una enseñanza superior.
+            </p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="#contact" id="cta-instructors" class="btn-primary cta-btn" data-sound="chord"
+            style="display: inline-block; text-decoration: none;">Inscribirme</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq" data-color="#050510" data-theme="dark">
+      <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-grid">
+          <details class="faq-item">
+            <summary>¿En qué consiste el programa de The Hollow Pianist?</summary>
+            <p>Es un programa progresivo y personalizado diseñado para desarrollar técnica pianística y comprensión
+              musical de forma integral.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué incluye el programa mensual?</summary>
+            <p>Incluye:<br>
+              • 4 clases de piano<br>
+              • 4 clases de teoría musical<br>
+              • 1 asesoría personalizada adicional (opcional, según necesidad)</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Las clases son online?</summary>
+            <p>Sí. Todas las clases se realizan en modalidad online, con acompañamiento cercano y seguimiento
+              constante.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Cómo se combinan piano y teoría?</summary>
+            <p>La técnica pianística y la teoría musical se trabajan de manera complementaria para que el estudiante
+              no
+              solo toque, sino que comprenda lo que interpreta.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿El programa es igual para todos?</summary>
+            <p>No. Progresivamente se irá adaptando al nivel, ritmo y objetivos de cada estudiante.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Necesito conocimientos previos?</summary>
+            <p>No. El programa está diseñado tanto para principiantes como para estudiantes intermedios.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Cuánto duran las clases?</summary>
+            <p>Tanto las clases de piano como teoría tendrán una duración de una hora.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué necesito para comenzar?</summary>
+            <p>Un piano o teclado, cámara y conexión estable a internet.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué hace diferente este programa?</summary>
+            <p>Más que enseñar a tocar piano, el objetivo es formar músicos conscientes: estudiantes que comprendan lo
+              que interpretan, desarrollen criterio musical propio y construyan una relación profunda y auténtica con
+              la
+              música.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact" data-color="#000000" style="position: relative; overflow: hidden;">
+      <div class="contact-bg-video">
+        <video autoplay loop muted playsinline src="/videos/cinematica_opt.mp4">
+        </video>
+        <div class="contact-overlay"></div>
+      </div>
+      <div class="container pricing-section">
+        <h2 class="section-title" data-i18n="pricingTitle" style="text-align: center; margin-bottom: 3rem;">Elige tu
+          Plan</h2>
+
+        <div class="pricing-grid">
+          <!-- Plan Standard / Mensual -->
+          <div class="pricing-card">
+            <div class="discount-badge">OFERTA LIMITADA</div>
+            <h3 class="pricing-card-title">PLAN MENSUAL</h3>
+            <div class="pricing-card-price-container">
+              <span id="old-price-monthly"
+                style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 1.5rem; margin-right: 8px; font-weight: 400; align-self: center;">$150</span>
+              <span id="price-monthly" class="pricing-card-price">$80</span>
+              <span id="interval-monthly" class="pricing-card-interval">USD/mes</span>
+            </div>
+            <p id="desc-monthly" class="pricing-card-desc">Para estudiantes que desean aprender a su propio ritmo paso
+              a
+              paso.</p>
+
+            <div class="pricing-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>4 clases de piano al mes</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>4 clases de teoría musical al mes</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Material de estudio incluido</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Acceso a comunidad exclusiva</span>
+              </div>
+            </div>
+
+            <div class="pricing-cta-container">
+              <!-- WhatsApp Button -->
+              <a id="whatsapp-btn-monthly"
+                href="https://wa.me/573046708255?text=Hola, quiero inscribirme al Plan Mensual de piano "
+                target="_blank" class="pricing-cta pricing-cta-whatsapp">
+                Inscribirme por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan Premium / Trimestral -->
+          <div class="pricing-card pricing-card-highlighted">
+            <div class="discount-badge"
+              style="background: var(--accent-color); color: #0a0a1a; font-weight: 800; box-shadow: 0 0 15px rgba(184, 168, 200, 0.5);">
+              MÁS POPULAR</div>
+            <h3 class="pricing-card-title">PLAN TRIMESTRAL</h3>
+            <div class="pricing-card-price-container">
+              <span id="old-price-quarterly"
+                style="text-decoration: line-through; color: rgba(255,255,255,0.4); font-size: 1.5rem; margin-right: 8px; font-weight: 400; align-self: center;">$450</span>
+              <span id="price-quarterly" class="pricing-card-price">$220</span>
+              <span id="interval-quarterly" class="pricing-card-interval">USD/3 meses</span>
+            </div>
+            <span id="monthly-equiv-quarterly" class="pricing-card-monthly-equiv">Solo $73 USD / mes</span>
+            <p class="pricing-card-desc">Una transformación musical completa <span id="desc-quarterly-saving"
+                class="price-saving" style="color: #25D366; font-weight: 700;">(Ahorras más de $230 USD)</span></p>
+
+            <div class="pricing-features">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>12 clases de piano (3 meses)</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>12 clases de teoría musical</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span style="font-weight: 600;">5 asesorías personalizadas extra</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Material de estudio + Retroalimentación y comunidad</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span>Paquete avanzado de partituras</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span style="font-weight: 600;">Plan de Ruta Personalizado (90 días)</span>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <span style="font-weight: 600;">Soporte VIP Prioritario por WhatsApp</span>
+              </div>
+              <div class="pricing-cta-container">
+                <!-- WhatsApp Button -->
+                <a id="whatsapp-btn-quarterly"
+                  href="https://wa.me/573046708255?text=Hola, quiero inscribirme al Plan Trimestral de piano "
+                  target="_blank" class="pricing-cta pricing-cta-whatsapp">
+                  Inscribirme por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="social-links"
+          style="margin-top: 4rem; display: flex; justify-content: center; gap: 2rem; align-items: center;">
+          <a href="https://www.tiktok.com/@thehollowpianist" target="_blank"
+            style="color: var(--text-color); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; transition: transform 0.3s; opacity: 0.8; position: relative; z-index: 10;"
+            onmouseover="this.style.opacity='1'; this.style.transform='scale(1.1)';"
+            onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)';">
+            <!-- TikTok Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z" />
+            </svg>
+            <span style="font-size: 0.8rem; font-family: var(--font-body);">TikTok</span>
+          </a>
+          <img src="/imagenes/logo_hero_opt.png" alt="The Hollow Academy Logo" class="footer-logo">
+          <a href="https://www.instagram.com/hollowpianoacademy/" target="_blank"
+            style="color: var(--text-color); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; transition: transform 0.3s; opacity: 0.8; position: relative; z-index: 10;"
+            onmouseover="this.style.opacity='1'; this.style.transform='scale(1.1)';"
+            onmouseout="this.style.opacity='0.8'; this.style.transform='scale(1)';">
+            <!-- Instagram Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+            </svg>
+            <span style="font-size: 0.8rem; font-family: var(--font-body);">Instagram</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mute Button -->
+  <button id="btn-mute" class="mute-btn" title="Silenciar sonidos">🔊</button>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+﻿node_modules/
+dist/
+.tmp/
+public/videos/payment_background.mp4
+public/videos/cinematica.mp4
+public/videos/pet.gif
+public/videos/pet.mp4
