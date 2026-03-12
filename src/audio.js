@@ -7,9 +7,20 @@ export class PianoAudio {
         this.isMuted = false;
     }
 
-    playNote(note) {
+    async playNote(note, isHover = false) {
         if (this.isMuted) return;
-        if (this.ctx.state === 'suspended') this.ctx.resume();
+
+        if (this.ctx.state === 'suspended') {
+            if (isHover) {
+                // If it's a hover and context is suspended, don't schedule notes. 
+                // This prevents the "explosion" bug when they interact later.
+                this.ctx.resume();
+                return;
+            } else {
+                // If it's a click/touch, wait for full resume before playing.
+                await this.ctx.resume();
+            }
+        }
 
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
@@ -27,10 +38,20 @@ export class PianoAudio {
         osc.stop(this.ctx.currentTime + 1);
     }
 
-    playChord() {
+    async playChord(isHover = false) {
         if (this.isMuted) return;
+        
+        if (this.ctx.state === 'suspended') {
+            if (isHover) {
+                this.ctx.resume();
+                return;
+            } else {
+                await this.ctx.resume();
+            }
+        }
+
         ['C4', 'E4', 'G4', 'C5'].forEach((note, i) => {
-            setTimeout(() => this.playNote(note), i * 100);
+            setTimeout(() => this.playNote(note, isHover), i * 100);
         });
     }
 

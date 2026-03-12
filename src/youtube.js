@@ -22,6 +22,8 @@ export function initYouTubePlayer() {
         document.head.appendChild(tag);
 
         window.onYouTubeIframeAPIReady = () => {
+            const originUrl = window.location.origin;
+
             new YT.Player('player', {
                 height: '100%',
                 width: '100%',
@@ -30,7 +32,7 @@ export function initYouTubePlayer() {
                     autoplay: 0,
                     controls: 1,
                     mute: 0,
-                    origin: window.location.origin,
+                    origin: originUrl,
                     rel: 0,
                     showinfo: 0,
                     playsinline: 1

@@ -2,6 +2,9 @@ import { initAnimations } from './src/animations.js';
 import { PianoAudio } from './src/audio.js';
 import { initYouTubePlayer } from './src/youtube.js';
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const audio = new PianoAudio();
 initAnimations(audio);
@@ -25,7 +28,7 @@ document.querySelectorAll('.piano-hover').forEach(el => {
     el.addEventListener('mouseenter', () => {
         const note = el.dataset.sound;
         if (!audio.isMuted) {
-            note === 'chord' ? audio.playChord() : audio.playNote(note);
+            note === 'chord' ? audio.playChord(true) : audio.playNote(note, true);
         }
     });
     el.addEventListener('mousedown', () => { el.style.filter = 'brightness(0.9)'; });
@@ -42,9 +45,9 @@ document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
 
 // Hero Piano Keys
 document.querySelectorAll('.key').forEach(key => {
-    key.addEventListener('mouseenter', () => playKey(key));
-    key.addEventListener('mousedown', () => playKey(key));
-    key.addEventListener('touchstart', (e) => { e.preventDefault(); playKey(key); });
+    key.addEventListener('mouseenter', () => playKey(key, true));
+    key.addEventListener('mousedown', () => playKey(key, false));
+    key.addEventListener('touchstart', (e) => { e.preventDefault(); playKey(key, false); });
 
     const resetKey = () => {
         gsap.to(key, { y: 0, duration: 0.2 });
@@ -56,9 +59,9 @@ document.querySelectorAll('.key').forEach(key => {
     key.addEventListener('touchend', resetKey);
 });
 
-function playKey(key) {
+function playKey(key, isHover = false) {
     const note = key.dataset.note;
-    if (!audio.isMuted) audio.playNote(note);
+    if (!audio.isMuted) audio.playNote(note, isHover);
     gsap.to(key, { y: 20, duration: 0.05, yoyo: true, repeat: 1 });
     key.style.background = '#b8a8c8';
 }
@@ -138,3 +141,19 @@ document.querySelectorAll('.read-more-btn').forEach(btn => {
 
 if (modalClose) modalClose.addEventListener('click', closeModal);
 if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+// Buttery Smooth Scroll for CTA buttons (GSAP ScrollToPlugin)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            gsap.to(window, {
+                duration: 1.5,
+                scrollTo: { y: targetElement, offsetY: 0 },
+                ease: 'power2.inOut'
+            });
+        }
+    });
+});
